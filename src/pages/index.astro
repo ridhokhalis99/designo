@@ -18,15 +18,38 @@ import Layout from "../layouts/Layout.astro";
         <img src="/assets/home/desktop/image-hero-phone.png" alt="hero" />
       </div>
     </section>
+
+    <section id="projects">
+      <div class="left-project">
+        <div class="project" id="web-project">
+          <h2>Web Design</h2>
+          <p>View Projects</p>
+        </div>
+      </div>
+      <div class="right-project">
+        <div class="project" id="app-project">
+          <h2>App Design</h2>
+          <p>View Projects</p>
+        </div>
+        <div class="project" id="graphic-project">
+          <h2>Graphic Design</h2>
+          <p>View Projects</p>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
 
-<style>
+<style lang="scss">
   main {
     margin: 0 auto;
-    padding: 1.5rem 0;
+    padding: 130px 0;
     max-width: 1120px;
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
   }
+
   #hero {
     display: grid;
     grid-auto-columns: minmax(0, 1fr);
@@ -40,42 +63,119 @@ import Layout from "../layouts/Layout.astro";
     background-position: 100% 100%;
     overflow: hidden;
     max-height: 640px;
+
+    .text {
+      h1,
+      p {
+        color: var(--white);
+      }
+
+      h1 {
+        font-size: 48px;
+        line-height: 48px;
+        margin-bottom: 12px;
+        font-weight: 500;
+        max-width: 540px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 40px;
+        max-width: 445px;
+      }
+
+      button {
+        background-color: var(--white);
+        border-radius: 8px;
+        border: none;
+        padding: 16px 24px;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+    }
+
+    .image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 540px;
+      max-height: 640px;
+      left: -20px;
+      top: -20px;
+    }
   }
-  #hero .text h1,
-  p {
-    color: var(--white);
-  }
-  #hero .text h1 {
-    font-size: 48px;
-    line-height: 48px;
-    margin-bottom: 12px;
-    font-weight: 500;
-    max-width: 540px;
-  }
-  #hero .text p {
-    font-size: 16px;
-    line-height: 26px;
-    margin-bottom: 40px;
-    max-width: 445px;
-  }
-  #hero .text button {
-    background-color: var(--white);
-    border-radius: 8px;
-    border: none;
-    padding: 16px 24px;
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  #hero .image {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 540px;
-    max-height: 640px;
-    left: -20px;
-    top: -20px;
+
+  #projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    height: 640px;
+
+    .project {
+      background-color: var(--peach);
+      border-radius: 15px;
+      height: 100%;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      h2 {
+        margin: 0;
+        font-size: 40px;
+        line-height: 22px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-top: 24px;
+      }
+    }
+
+    .left-project {
+      display: grid;
+      #web-project {
+        background-image: url("/assets/home/desktop/image-web-design-large.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
+      }
+    }
+
+    .right-project {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      gap: 24px;
+
+      #app-project {
+        background-image: url("/assets/home/desktop/image-app-design.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
+      }
+
+      #graphic-project {
+        background-image: url("/assets/home/desktop/image-graphic-design.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
+      }
+    }
   }
 </style>
