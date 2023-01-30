@@ -60,43 +60,57 @@ const socialLinks = [
     </nav>
     <slot />
     <footer>
-      <div class="logo-nav-container">
-        <img src="/assets/shared/desktop/logo-light.png" alt="logo" />
-        <ul>
-          <li>
-            <a href="/">Our Company</a>
-          </li>
-          <li>
-            <a href="/about">Locations</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <div class="contact-container">
-        <div class="address-contact-container">
-          <div class="contact-info">
-            <h3>Designo Central Office</h3>
-            <p>3886 Wellington Street</p>
-            <p>Toronto, Ontario M9C 3J5</p>
-          </div>
-          <div class="contact-info">
-            <p>Contact Us (Central Office)</p>
-            <p>P : +1 253-863-8967</p>
+      <div class="footer-content">
+        <div class="cta-contact">
+          <div class="text">
+            <h2>Let's talk about your project</h2>
             <p>
-              M : <a href="mailto:contact@designo.co">contact@designo.co</a>
+              Ready to take it to the next level? Contact us today and find out
+              how our expertise can help your business grow.
             </p>
           </div>
+          <a href="/contact">Get in touch</a>
         </div>
-        <div class="social-link">
-          {
-            socialLinks.map(({ href, label, icon }) => (
-              <a href={href}>
-                <img src={icon} alt={label} />
-              </a>
-            ))
-          }
+        <div class="logo-nav-container">
+          <a href="/">
+            <img src="/assets/shared/desktop/logo-light.png" alt="logo" />
+          </a>
+          <ul>
+            <li>
+              <a href="/about">Our Company</a>
+            </li>
+            <li>
+              <a href="/locations">Locations</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="contact-container">
+          <div class="address-contact-container">
+            <div class="contact-info">
+              <h3>Designo Central Office</h3>
+              <p>3886 Wellington Street</p>
+              <p>Toronto, Ontario M9C 3J5</p>
+            </div>
+            <div class="contact-info">
+              <p>Contact Us (Central Office)</p>
+              <p>P : +1 253-863-8967</p>
+              <p>
+                M : <a href="mailto:contact@designo.co">contact@designo.co</a>
+              </p>
+            </div>
+          </div>
+          <div class="social-link">
+            {
+              socialLinks.map(({ href, label, icon }) => (
+                <a href={href}>
+                  <img src={icon} alt={label} />
+                </a>
+              ))
+            }
+          </div>
         </div>
       </div>
     </footer>
@@ -153,87 +167,145 @@ const socialLinks = [
   }
   footer {
     background-color: var(--black);
-    padding: 144px 72px 72px 72px;
-    color: var(--white);
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    margin-top: 120px;
+    width: 100%;
 
-    .logo-nav-container {
-      display: flex;
+    .footer-content {
+      margin: 0 auto;
+      color: var(--white);
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--dark-grey);
+      gap: 2rem;
+      position: relative;
+      max-width: 1120px;
+      padding: 144px 0 72px 0;
 
-      img {
-        width: 10rem;
-      }
-
-      ul {
+      .cta-contact {
         display: flex;
-        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        background: url("assets/shared/desktop/bg-pattern-call-to-action.svg")
+            no-repeat,
+          var(--peach);
+        background-position: 100% 50%;
+        border-radius: 16px;
+        position: absolute;
+        top: -210px;
+        width: 100%;
 
-        li {
-          list-style: none;
+        .text {
+          max-width: 50%;
+          padding: 64px 0 64px 72px;
+        }
+
+        h2 {
+          font-size: 40px;
+          line-height: 40px;
+          letter-spacing: 2px;
+          font-weight: 500;
+          margin: 0;
+          max-width: 300px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 1px;
+          font-weight: 400;
+          max-width: 350px;
         }
 
         a {
-          color: var(--white);
+          color: var(--black);
           text-decoration: none;
-          font-weight: 400;
+          font-weight: 500;
           text-transform: uppercase;
-          font-size: 14px;
+          font-size: 15px;
           line-height: 14px;
           letter-spacing: 2px;
+          padding: 18px;
+          background-color: var(--white);
+          border-radius: 12px;
+          margin-right: 72px;
         }
       }
-    }
 
-    .contact-container {
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-end;
-
-      .address-contact-container {
+      .logo-nav-container {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
-        padding-top: 40px;
-        color: var(--white);
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--dark-grey);
 
-        .contact-info {
+        img {
+          width: 10rem;
+        }
+
+        ul {
           display: flex;
-          flex-direction: column;
-          width: 350px;
+          gap: 1rem;
 
-          h3,
-          p,
-          a {
-            opacity: 0.5;
-            font-size: 16px;
-            margin: 0;
-          }
-
-          h3 {
-            font-weight: 500;
-          }
-
-          p {
-            font-weight: 400;
-            line-height: 26px;
+          li {
+            list-style: none;
           }
 
           a {
             color: var(--white);
-            opacity: 1;
             text-decoration: none;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 14px;
+            letter-spacing: 2px;
           }
         }
       }
-      .social-link {
+
+      .contact-container {
         display: flex;
-        gap: 16px;
+        justify-content: space-around;
+        align-items: flex-end;
+
+        .address-contact-container {
+          display: flex;
+          width: 100%;
+          padding-top: 40px;
+          color: var(--white);
+
+          .contact-info {
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+
+            h3,
+            p,
+            a {
+              opacity: 0.5;
+              font-size: 16px;
+              margin: 0;
+            }
+
+            h3 {
+              font-weight: 500;
+            }
+
+            p {
+              font-weight: 400;
+              line-height: 26px;
+            }
+
+            a {
+              color: var(--white);
+              opacity: 1;
+              text-decoration: none;
+            }
+          }
+        }
+        .social-link {
+          display: flex;
+          gap: 16px;
+        }
       }
     }
   }
