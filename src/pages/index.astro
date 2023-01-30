@@ -1,5 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const benefits = [
+  {
+    title: "Passionate",
+    description:
+      "Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge art, design, and technology into exciting new solutions.",
+    image: "/assets/home/desktop/illustration-passionate.svg",
+  },
+  {
+    title: "Resourceful",
+    description:
+      "Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer collaboration. It guarantees superior results that fulfill our clients’ needs.",
+    image: "/assets/home/desktop/illustration-resourceful.svg",
+  },
+  {
+    title: "Friendly",
+    description:
+      "We are a group of enthusiastic folks who know how to put people first. Our success depends on our customers, and we strive to give them the best experience a company can provide.",
+    image: "/assets/home/desktop/illustration-friendly.svg",
+  },
+];
 ---
 
 <Layout title="Home">
@@ -37,145 +58,226 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </section>
+
+    <section id="benefit">
+      {
+        benefits.map((benefit) => (
+          <div class="benefit">
+            <div class="image-background">
+              <img src={benefit.image} alt={benefit.title} />
+            </div>
+            <h2>{benefit.title}</h2>
+            <p>{benefit.description}</p>
+          </div>
+        ))
+      }
+    </section>
   </main>
-</Layout>
 
-<style lang="scss">
-  main {
-    margin: 0 auto;
-    padding: 130px 0;
-    max-width: 1120px;
-    display: flex;
-    flex-direction: column;
-    gap: 160px;
-  }
-
-  #hero {
-    display: grid;
-    grid-auto-columns: minmax(0, 1fr);
-    grid-auto-flow: column;
-    align-items: center;
-    padding: 0 95px;
-    background-color: var(--peach);
-    border-radius: 15px;
-    background-image: url("/assets/home/desktop/bg-pattern-hero-home.svg");
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
-    overflow: hidden;
-    max-height: 640px;
-
-    .text {
-      h1,
-      p {
-        color: var(--white);
-      }
-
-      h1 {
-        font-size: 48px;
-        line-height: 48px;
-        margin-bottom: 12px;
-        font-weight: 500;
-        max-width: 540px;
-      }
-
-      p {
-        font-size: 16px;
-        line-height: 26px;
-        margin-bottom: 40px;
-        max-width: 445px;
-      }
-
-      button {
-        background-color: var(--white);
-        border-radius: 8px;
-        border: none;
-        padding: 16px 24px;
-        font-size: 14px;
-        line-height: 22px;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        cursor: pointer;
-      }
-    }
-
-    .image {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      max-width: 540px;
-      max-height: 640px;
-      left: -20px;
-      top: -20px;
-    }
-  }
-
-  #projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    height: 640px;
-
-    .project {
-      background-color: var(--peach);
-      border-radius: 15px;
-      height: 100%;
-      color: var(--white);
+  <style lang="scss">
+    main {
+      margin: 0 auto;
+      padding: 130px 0;
+      max-width: 1120px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      gap: 160px;
+    }
+
+    #hero {
+      display: grid;
+      grid-auto-columns: minmax(0, 1fr);
+      grid-auto-flow: column;
       align-items: center;
-      cursor: pointer;
+      padding: 0 95px;
+      background-color: var(--peach);
+      border-radius: 15px;
+      background-image: url("/assets/home/desktop/bg-pattern-hero-home.svg");
+      background-repeat: no-repeat;
+      background-position: 100% 100%;
+      overflow: hidden;
+      max-height: 640px;
 
-      h2 {
-        margin: 0;
-        font-size: 40px;
-        line-height: 22px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
+      .text {
+        h1,
+        p {
+          color: var(--white);
+        }
+
+        h1 {
+          font-size: 48px;
+          line-height: 52px;
+          margin-bottom: 12px;
+          font-weight: 500;
+          max-width: 540px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 26px;
+          margin-bottom: 40px;
+          max-width: 445px;
+        }
+
+        button {
+          background-color: var(--white);
+          border-radius: 8px;
+          border: none;
+          padding: 16px 24px;
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          cursor: pointer;
+        }
       }
 
-      p {
-        font-size: 14px;
-        line-height: 22px;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        margin-top: 24px;
+      .image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: 540px;
+        max-height: 640px;
+        left: -50px;
+        top: -20px;
       }
     }
 
-    .left-project {
+    #projects {
       display: grid;
-      #web-project {
-        background-image: url("/assets/home/desktop/image-web-design-large.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      height: 640px;
+
+      .project {
+        background-color: var(--peach);
+        border-radius: 15px;
+        height: 100%;
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        h2 {
+          margin: 0;
+          font-size: 40px;
+          line-height: 22px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 5px;
+          margin-top: 24px;
+        }
+      }
+
+      .left-project {
+        display: grid;
+        #web-project {
+          background-image: url("/assets/home/desktop/image-web-design-large.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
+        }
+      }
+
+      .right-project {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 24px;
+
+        #app-project {
+          background-image: url("/assets/home/desktop/image-app-design.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
+        }
+
+        #graphic-project {
+          background-image: url("/assets/home/desktop/image-graphic-design.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
+        }
       }
     }
 
-    .right-project {
+    #benefit {
       display: grid;
-      grid-template-rows: repeat(2, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
 
-      #app-project {
-        background-image: url("/assets/home/desktop/image-app-design.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
+      .benefit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+
+        .image-background {
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        h2 {
+          font-size: 20px;
+          line-height: 24px;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 500;
+          letter-spacing: 5px;
+          color: var(--dark-grey);
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 26px;
+          text-align: center;
+          color: var(--dark-grey);
+        }
       }
 
-      #graphic-project {
-        background-image: url("/assets/home/desktop/image-graphic-design.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
+      .benefit:nth-child(1) {
+        .image-background {
+          background: linear-gradient(
+            270deg,
+            rgba(93, 2, 2, 0.0001) 0%,
+            rgba(93, 2, 2, 0.2) 100%
+          );
+        }
+      }
+
+      .benefit:nth-child(2) {
+        .image-background {
+          background: linear-gradient(
+            180deg,
+            rgba(93, 2, 2, 0.0001) 0%,
+            rgba(93, 2, 2, 0.2) 100%
+          );
+        }
+      }
+
+      .benefit:nth-child(3) {
+        .image-background {
+          background: linear-gradient(
+            0deg,
+            rgba(93, 2, 2, 0.0001) 0%,
+            rgba(93, 2, 2, 0.2) 100%
+          );
+        }
       }
     }
-  }
-</style>
+  </style>
+</Layout>
