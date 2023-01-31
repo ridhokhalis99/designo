@@ -1,0 +1,101 @@
+---
+const locations = [
+  {
+    name: "Canada",
+    city: "Toronto",
+    img: "assets/shared/desktop/illustration-canada.svg",
+  },
+  {
+    name: "Australia",
+    city: "Sydney",
+    img: "assets/shared/desktop/illustration-australia.svg",
+  },
+  {
+    name: "United Kingdom",
+    city: "London",
+    img: "assets/shared/desktop/illustration-united-kingdom.svg",
+  },
+];
+---
+
+<section id="locations">
+  {
+    locations.map((location) => (
+      <div class="location">
+        <div class="image-background">
+          <img src={location.img} alt={location.name} />
+        </div>
+        <h2>{location.name}</h2>
+        <a href="/locations">See location</a>
+      </div>
+    ))
+  }
+</section>
+
+<style lang="scss">
+  #locations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 32px;
+
+    .location {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .image-background {
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 5px;
+        color: var(--dark-grey);
+      }
+
+      a {
+        text-decoration: none;
+        background-color: var(--peach);
+        color: var(--white);
+        padding: 12px 18px;
+        border-radius: 8px;
+      }
+    }
+
+    .location:nth-child(1) {
+      .image-background {
+        background: linear-gradient(
+          0deg,
+          rgba(93, 2, 2, 0.0001) 0%,
+          rgba(93, 2, 2, 0.1) 100%
+        );
+      }
+    }
+
+    .location:nth-child(2) {
+      .image-background {
+        background: linear-gradient(
+          270deg,
+          rgba(93, 2, 2, 0.0001) 0%,
+          rgba(93, 2, 2, 0.1) 100%
+        );
+      }
+    }
+
+    .location:nth-child(3) {
+      .image-background {
+        background: linear-gradient(
+          180deg,
+          rgba(93, 2, 2, 0.0001) 0%,
+          rgba(93, 2, 2, 0.1) 100%
+        );
+      }
+    }
+  }
+</style>
