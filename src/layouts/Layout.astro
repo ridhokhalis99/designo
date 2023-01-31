@@ -11,6 +11,12 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+const footerLinks = [
+  { href: "/about", label: "Our Company" },
+  { href: "/locations", label: "Locations" },
+  { href: "/contact", label: "Contact" },
+];
+
 const socialLinks = [
   {
     href: "https://www.facebook.com",
@@ -62,7 +68,7 @@ const socialLinks = [
     <footer>
       <div class="footer-content">
         <div class="cta-contact">
-          <div class="text">
+          <div class="text-container">
             <h2>Let's talk about your project</h2>
             <p>
               Ready to take it to the next level? Contact us today and find out
@@ -76,15 +82,13 @@ const socialLinks = [
             <img src="/assets/shared/desktop/logo-light.png" alt="logo" />
           </a>
           <ul>
-            <li>
-              <a href="/about">Our Company</a>
-            </li>
-            <li>
-              <a href="/locations">Locations</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
-            </li>
+            {
+              footerLinks.map(({ href, label }) => (
+                <li>
+                  <a href={href}>{label}</a>
+                </li>
+              ))
+            }
           </ul>
         </div>
         <div class="contact-container">
@@ -122,6 +126,7 @@ const socialLinks = [
   :root {
     --peach: #e7816b;
     --light-peach: #ffad9b;
+    --lightest-peach: #fdf3f0;
     --black: #1d1c1e;
     --dark-grey: #333136;
     --light-grey: #f1f3f5;
@@ -193,7 +198,7 @@ const socialLinks = [
         top: -210px;
         width: 100%;
 
-        .text {
+        .text-container {
           max-width: 50%;
           padding: 64px 0 64px 72px;
         }

@@ -1,7 +1,303 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const locations = [
+  {
+    name: "Canada",
+    city: "Toronto",
+    img: "assets/shared/desktop/illustration-canada.svg",
+  },
+  {
+    name: "Australia",
+    city: "Sydney",
+    img: "assets/shared/desktop/illustration-australia.svg",
+  },
+  {
+    name: "United Kingdom",
+    city: "London",
+    img: "assets/shared/desktop/illustration-united-kingdom.svg",
+  },
+];
 ---
 
 <Layout title="About">
-  <main></main>
+  <main>
+    <section id="about-us">
+      <div class="left-container">
+        <div class="text-container">
+          <h1>About Us</h1>
+          <p>
+            Founded in 2010, we are a creative agency that produces lasting
+            results for our clients. We’ve partnered with many startups,
+            corporations, and nonprofits alike to craft designs that make real
+            impact. We’re always looking forward to creating brands, products,
+            and digital experiences that connect with our clients’ audiences.
+          </p>
+        </div>
+      </div>
+      <img src="/assets/about/desktop/image-about-hero.jpg" alt="about us" />
+    </section>
+
+    <section id="world-class-talent">
+      <img
+        src="/assets/about/desktop/image-world-class-talent.jpg"
+        alt="world class talent"
+      />
+      <div class="right-container">
+        <div class="text-container">
+          <h1>World-class talent</h1>
+          <p>
+            We are a crew of strategists, problem-solvers, and technologists.
+            Every design is thoughtfully crafted from concept to launch,
+            ensuring success in its given market. We are constantly updating our
+            skills in a myriad of platforms.
+          </p>
+          <p>
+            Our team is multi-disciplinary and we are not merely interested in
+            form — content and meaning are just as important. We give great
+            importance to craftsmanship, service, and prompt delivery. Clients
+            have always been impressed with our high-quality outcomes that
+            encapsulates their brand’s story and mission.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="locations">
+      {
+        locations.map((location) => (
+          <div class="location">
+            <div class="image-background">
+              <img src={location.img} alt={location.name} />
+            </div>
+            <h2>{location.name}</h2>
+            <a href="/locations">See location</a>
+          </div>
+        ))
+      }
+    </section>
+
+    <section id="the-real-deal">
+      <div class="left-container">
+        <div class="text-container">
+          <h1>The real deal</h1>
+          <p>
+            As strategic partners in our clients’ businesses, we are ready to
+            take on any challenge as our own. Solving real problems require
+            empathy and collaboration, and we strive to bring a fresh
+            perspective to every opportunity. We make design and technology more
+            accessible and give you tools to measure success.
+          </p>
+          <p>
+            We are visual storytellers in appealing and captivating ways. By
+            combining business and marketing strategies, we inspire audiences to
+            take action and drive real results.
+          </p>
+        </div>
+      </div>
+      <img
+        src="/assets/about/desktop/image-real-deal.jpg"
+        alt="the real deal"
+      />
+    </section>
+  </main>
 </Layout>
+
+<style lang="scss">
+  main {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 130px 0 210px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+  }
+
+  #about-us {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    background-color: var(--peach);
+    border-radius: 16px;
+    overflow: hidden;
+
+    .left-container {
+      padding: 135px 0 135px 95px;
+      background-image: url("/assets/about/desktop/bg-pattern-hero-about-desktop.svg");
+      background-position: 100% 100%;
+      color: var(--white);
+
+      .text-container {
+        max-width: 400px;
+
+        h1 {
+          font-size: 48px;
+          font-weight: 500;
+          line-height: 48px;
+          margin-bottom: 32px;
+        }
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+        }
+      }
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      right: -20px;
+    }
+  }
+
+  #world-class-talent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    background-color: var(--lightest-peach);
+    border-radius: 16px;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .right-container {
+      padding: 135px 95px 135px 0;
+      background-position: 0 100%;
+      background-image: url("/assets/shared/desktop/bg-pattern-two-circles.svg");
+      background-repeat: no-repeat;
+
+      .text-container {
+        max-width: 445px;
+
+        h1 {
+          font-size: 40px;
+          font-weight: 500;
+          line-height: 40px;
+          margin-bottom: 24px;
+          color: var(--peach);
+        }
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+          color: var(--dark-grey);
+        }
+      }
+    }
+  }
+
+  #locations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 32px;
+
+    .location {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .image-background {
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 5px;
+        color: var(--dark-grey);
+      }
+
+      a {
+        text-decoration: none;
+        background-color: var(--peach);
+        color: var(--white);
+        padding: 12px 18px;
+        border-radius: 8px;
+      }
+    }
+
+    .location:nth-child(1) {
+      .image-background {
+        background: linear-gradient(
+          0deg,
+          rgba(93, 2, 2, 0.0001) 0%,
+          rgba(93, 2, 2, 0.1) 100%
+        );
+      }
+    }
+
+    .location:nth-child(2) {
+      .image-background {
+        background: linear-gradient(
+          270deg,
+          rgba(93, 2, 2, 0.0001) 0%,
+          rgba(93, 2, 2, 0.1) 100%
+        );
+      }
+    }
+
+    .location:nth-child(3) {
+      .image-background {
+        background: linear-gradient(
+          180deg,
+          rgba(93, 2, 2, 0.0001) 0%,
+          rgba(93, 2, 2, 0.1) 100%
+        );
+      }
+    }
+  }
+
+  #the-real-deal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    background-color: var(--lightest-peach);
+    border-radius: 16px;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      right: -90px;
+    }
+
+    .left-container {
+      padding: 135px 0 135px 95px;
+      background-image: url("/assets/shared/desktop/bg-pattern-two-circles.svg");
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      width: 100%;
+      color: var(--white);
+
+      .text-container {
+        max-width: 400px;
+
+        h1 {
+          font-size: 40px;
+          font-weight: 500;
+          line-height: 40px;
+          margin-bottom: 24px;
+          color: var(--peach);
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+          color: var(--dark-grey);
+        }
+      }
+    }
+  }
+</style>
