@@ -8,7 +8,7 @@ const locations = [
     address: "3886 Wellington Street",
     city: "Toronto, Ontario M9C 3J5",
     phone: "+1 253-863-8967",
-    mapId: "map-canada",
+    id: "canada",
   },
   {
     name: "Australia",
@@ -16,7 +16,7 @@ const locations = [
     address: "19 Balonne Street",
     city: "New South Wales 2443",
     phone: "(02) 6720 9092",
-    mapId: "map-australia",
+    id: "australia",
   },
   {
     name: "United Kingdom",
@@ -24,7 +24,7 @@ const locations = [
     address: "13 Colorado Way",
     city: "Rhyd-y-fro SA8 9GA",
     phone: "078 3115 1400",
-    mapId: "map-uk",
+    id: "uk",
   },
 ];
 ---
@@ -33,7 +33,7 @@ const locations = [
   <main>
     {
       locations.map((location) => (
-        <section>
+        <section id={location.id}>
           <div class="text-wrapper">
             <div class="text-container">
               <h1>{location.name}</h1>
@@ -59,7 +59,7 @@ const locations = [
               </div>
             </div>
           </div>
-          <div class="map" id={location.mapId} />
+          <div class="map" id={`map-${location.id}`} />
         </section>
       ))
     }

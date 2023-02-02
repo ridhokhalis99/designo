@@ -4,16 +4,19 @@ const locations = [
     name: "Canada",
     city: "Toronto",
     img: "assets/shared/desktop/illustration-canada.svg",
+    id: "canada",
   },
   {
     name: "Australia",
     city: "Sydney",
     img: "assets/shared/desktop/illustration-australia.svg",
+    id: "australia",
   },
   {
     name: "United Kingdom",
     city: "London",
     img: "assets/shared/desktop/illustration-united-kingdom.svg",
+    id: "uk",
   },
 ];
 ---
@@ -26,7 +29,7 @@ const locations = [
           <img src={location.img} alt={location.name} />
         </div>
         <h2>{location.name}</h2>
-        <a href="/locations">See location</a>
+        <a href={`locations#${location.id}`}>See location</a>
       </div>
     ))
   }
