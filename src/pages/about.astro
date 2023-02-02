@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Locations from "./locations.astro";
+import Locations from "../components/Locations.astro";
 ---
 
 <Layout title="About">
@@ -75,15 +75,6 @@ import Locations from "./locations.astro";
 </Layout>
 
 <style lang="scss">
-  main {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 130px 0 210px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 160px;
-  }
-
   #about-us {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
