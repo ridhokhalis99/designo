@@ -42,20 +42,26 @@ const benefits = [
 
     <section id="projects">
       <div class="left-project">
-        <div class="project" id="web-project">
-          <h2>Web Design</h2>
-          <p>View Projects</p>
-        </div>
+        <a href="/projects/web-design">
+          <div class="project" id="web-project">
+            <h2>Web Design</h2>
+            <p>View Projects</p>
+          </div>
+        </a>
       </div>
       <div class="right-project">
-        <div class="project" id="app-project">
-          <h2>App Design</h2>
-          <p>View Projects</p>
-        </div>
-        <div class="project" id="graphic-project">
-          <h2>Graphic Design</h2>
-          <p>View Projects</p>
-        </div>
+        <a href="/projects/app-design">
+          <div class="project" id="app-project">
+            <h2>App Design</h2>
+            <p>View Projects</p>
+          </div>
+        </a>
+        <a href="/projects/graphic-design">
+          <div class="project" id="graphic-project">
+            <h2>Graphic Design</h2>
+            <p>View Projects</p>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -75,15 +81,6 @@ const benefits = [
   </main>
 
   <style lang="scss">
-    // main {
-    //   margin: 0 auto;
-    //   padding: 130px 0 210px 0;
-    //   max-width: 1120px;
-    //   display: flex;
-    //   flex-direction: column;
-    //   gap: 160px;
-    // }
-
     #hero {
       display: grid;
       grid-auto-columns: minmax(0, 1fr);
@@ -159,10 +156,10 @@ const benefits = [
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
 
         h2 {
           margin: 0;
@@ -186,7 +183,6 @@ const benefits = [
         display: grid;
         #web-project {
           background-image: url("/assets/home/desktop/image-web-design-large.jpg");
-          box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
         }
       }
 
@@ -197,12 +193,10 @@ const benefits = [
 
         #app-project {
           background-image: url("/assets/home/desktop/image-app-design.jpg");
-          box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
         }
 
         #graphic-project {
           background-image: url("/assets/home/desktop/image-graphic-design.jpg");
-          box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
         }
       }
     }

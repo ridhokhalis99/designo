@@ -138,6 +138,12 @@ const socialLinks = [
   body {
     margin: 0;
   }
+  * {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+  }
   nav {
     display: flex;
     align-items: center;
@@ -146,6 +152,7 @@ const socialLinks = [
     background-color: var(--white);
     max-width: 1120px;
     margin: 0 auto;
+    padding-top: 40px;
 
     img {
       width: 10rem;
@@ -162,7 +169,6 @@ const socialLinks = [
 
     a {
       color: var(--dark-grey);
-      text-decoration: none;
       font-weight: 400;
       text-transform: uppercase;
       font-size: 14px;
@@ -199,7 +205,7 @@ const socialLinks = [
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: url("assets/shared/desktop/bg-pattern-call-to-action.svg")
+        background: url("/assets/shared/desktop/bg-pattern-call-to-action.svg")
             no-repeat,
           var(--peach);
         background-position: 100% 50%;
@@ -218,8 +224,8 @@ const socialLinks = [
           line-height: 40px;
           letter-spacing: 2px;
           font-weight: 500;
-          margin: 0;
           max-width: 300px;
+          margin-bottom: 16px;
         }
 
         p {
@@ -232,7 +238,6 @@ const socialLinks = [
 
         a {
           color: var(--black);
-          text-decoration: none;
           font-weight: 500;
           text-transform: uppercase;
           font-size: 15px;
@@ -267,7 +272,6 @@ const socialLinks = [
 
           a {
             color: var(--white);
-            text-decoration: none;
             font-weight: 400;
             text-transform: uppercase;
             font-size: 14px;
@@ -298,7 +302,6 @@ const socialLinks = [
             a {
               opacity: 0.5;
               font-size: 16px;
-              margin: 0;
             }
 
             h3 {
@@ -313,7 +316,6 @@ const socialLinks = [
             a {
               color: var(--white);
               opacity: 1;
-              text-decoration: none;
             }
           }
         }
