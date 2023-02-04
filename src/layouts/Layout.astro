@@ -137,7 +137,7 @@ const socialLinks = [
     scroll-behavior: smooth;
   }
   body {
-    margin: 0;
+    min-width: fit-content;
   }
   * {
     margin: 0;
@@ -159,11 +159,16 @@ const socialLinks = [
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 8px 24px;
     background-color: var(--white);
     max-width: 1120px;
-    margin: 0 auto;
+    margin: 0 auto 64px;
     padding-top: 40px;
+
+    @media screen and (max-width: 768px) {
+      margin: 0 auto 32px;
+      max-width: 700px;
+    }
 
     img {
       width: 10rem;
@@ -196,10 +201,14 @@ const socialLinks = [
   main {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 130px 0 210px 0;
     display: flex;
     flex-direction: column;
-    gap: 120px;
+    gap: 110px;
+    padding: 0 24px;
+
+    @media screen and (max-width: 768px) {
+      max-width: 700px;
+    }
   }
 
   footer {
@@ -208,14 +217,18 @@ const socialLinks = [
     width: 100%;
 
     .footer-content {
-      margin: 0 auto;
+      margin: 320px auto 0;
       color: var(--white);
       justify-content: center;
       align-items: center;
       gap: 2rem;
       position: relative;
       max-width: 1120px;
-      padding: 144px 0 72px 0;
+      padding: 144px 0 72px;
+
+      @media screen and (max-width: 768px) {
+        max-width: 700px;
+      }
 
       .cta-contact {
         display: flex;
@@ -228,11 +241,28 @@ const socialLinks = [
         border-radius: 16px;
         position: absolute;
         top: -210px;
-        width: 100%;
+        width: calc(100% - 192px);
+        padding: 72px 96px;
+
+        @media screen and (max-width: 768px) {
+          background-size: cover;
+          flex-direction: column;
+          top: -70%;
+          padding: 56px 0;
+          gap: 32px;
+          width: 100%;
+        }
 
         .text-container {
           max-width: 50%;
-          padding: 64px 0 64px 72px;
+
+          @media screen and (max-width: 768px) {
+            max-width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
         }
 
         h2 {
@@ -265,6 +295,10 @@ const socialLinks = [
           &:hover {
             background-color: var(--light-peach);
             color: var(--white);
+          }
+
+          @media screen and (max-width: 768px) {
+            margin-right: 0;
           }
         }
       }
@@ -315,6 +349,10 @@ const socialLinks = [
             display: flex;
             flex-direction: column;
             width: 350px;
+
+            @media screen and (max-width: 768px) {
+              width: 220px;
+            }
 
             h3,
             p,
