@@ -35,6 +35,12 @@ import Locations from "../components/Locations.astro";
 </Layout>
 
 <style lang="scss">
+  main {
+    @media screen and (max-width: 480px) {
+      gap: 0;
+    }
+  }
+
   #contact-us {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -53,6 +59,10 @@ import Locations from "../components/Locations.astro";
       padding: 72px 40px;
     }
 
+    @media screen and (max-width: 480px) {
+      border-radius: 0;
+    }
+
     .left-container {
       color: var(--white);
 
@@ -62,6 +72,10 @@ import Locations from "../components/Locations.astro";
 
       p {
         letter-spacing: 0.5px;
+      }
+
+      @media screen and (max-width: 480px) {
+        text-align: center;
       }
     }
 
@@ -106,6 +120,10 @@ import Locations from "../components/Locations.astro";
           margin-left: auto;
           margin-top: 24px;
           letter-spacing: 1px;
+
+          @media screen and (max-width: 480px) {
+            margin-right: auto;
+          }
         }
       }
     }
