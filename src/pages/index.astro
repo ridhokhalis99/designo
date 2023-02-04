@@ -42,22 +42,22 @@ const benefits = [
 
     <section id="projects">
       <div class="left-project">
-        <a href="/projects/web-design">
-          <div class="project hidden" id="web-project">
+        <a href="/projects/web-design" class="hidden">
+          <div class="project" id="web-project">
             <h2>Web Design</h2>
             <p>View Projects</p>
           </div>
         </a>
       </div>
       <div class="right-project">
-        <a href="/projects/app-design">
+        <a href="/projects/app-design" class="hidden">
           <div class="project hidden" id="app-project">
             <h2>App Design</h2>
             <p>View Projects</p>
           </div>
         </a>
-        <a href="/projects/graphic-design">
-          <div class="project hidden" id="graphic-project">
+        <a href="/projects/graphic-design" class="hidden">
+          <div class="project" id="graphic-project">
             <h2>Graphic Design</h2>
             <p>View Projects</p>
           </div>
@@ -178,7 +178,7 @@ const benefits = [
 
       &:hover {
         background-size: 110%;
-        box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.4);
+        box-shadow: inset 0 0 0 1000px hsla(11, 72%, 66%, 0.9);
       }
 
       h2 {
@@ -201,9 +201,13 @@ const benefits = [
 
     .left-project {
       display: grid;
+
+      a {
+        transition-delay: 200ms;
+      }
+
       #web-project {
         background-image: url("/assets/home/desktop/image-web-design-large.jpg");
-        transition-delay: 200ms;
       }
     }
 
@@ -212,14 +216,20 @@ const benefits = [
       grid-template-rows: repeat(2, 1fr);
       gap: 24px;
 
+      a:nth-child(1) {
+        transition-delay: 400ms;
+      }
+
+      a:nth-child(2) {
+        transition-delay: 600ms;
+      }
+
       #app-project {
         background-image: url("/assets/home/desktop/image-app-design.jpg");
-        transition-delay: 400ms;
       }
 
       #graphic-project {
         background-image: url("/assets/home/desktop/image-graphic-design.jpg");
-        transition-delay: 600ms;
       }
     }
   }
