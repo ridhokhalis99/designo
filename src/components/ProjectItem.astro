@@ -3,12 +3,13 @@ export interface Props {
   name: string;
   description: string;
   imageUrl: string;
+  className: string;
 }
 
-const { name, description, imageUrl } = Astro.props;
+const { name, description, imageUrl, className } = Astro.props;
 ---
 
-<div class="card">
+<div class={`card ${className}`}>
   <img src={imageUrl} alt={name} />
   <div class="text-container">
     <h3>{name}</h3>
