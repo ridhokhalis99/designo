@@ -69,11 +69,19 @@ const locations = [
 <style lang="scss">
   main {
     gap: 32px;
+
+    @media screen and (max-width: 768px) {
+      gap: 120px;
+    }
   }
 
   section {
     display: flex;
     gap: 30px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
 
     .text-wrapper {
       width: 60%;
@@ -84,6 +92,10 @@ const locations = [
       background-image: url("/assets/shared/desktop/bg-pattern-two-circles.svg");
       background-repeat: no-repeat;
       background-position: 0 100%;
+
+      @media screen and (max-width: 768px) {
+        width: calc(100% - 176px);
+      }
 
       h1 {
         font-size: 40px;
@@ -121,6 +133,11 @@ const locations = [
         scale: 1.05;
         background-size: 140%;
       }
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 320px;
+      }
     }
 
     #map-canada {
@@ -138,5 +155,9 @@ const locations = [
 
   section:nth-child(even) {
     flex-direction: row-reverse;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
   }
 </style>
