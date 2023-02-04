@@ -44,6 +44,9 @@ const socialLinks = [
     icon: "/assets/shared/desktop/icon-instagram.svg",
   },
 ];
+
+const metaDescription =
+  "Designo is a global design agency specializing in web design, mobile design, and branding. We bring award-winning digital solutions to businesses large and small. Our goal is to build brands that are authentic and memorable. We are based in Toronto, but we serve clients all over the world.";
 ---
 
 <!DOCTYPE html>
@@ -53,6 +56,7 @@ const socialLinks = [
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={metaDescription} />
     <title>{title}</title>
   </head>
   <body>
