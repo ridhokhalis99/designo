@@ -159,6 +159,7 @@ import Locations from "../components/Locations.astro";
       background-position: 0 100%;
       background-image: url("/assets/shared/desktop/bg-pattern-two-circles.svg");
       background-repeat: no-repeat;
+      width: 100%;
 
       @media screen and (max-width: 768px) {
         padding: 64px 0;
@@ -179,10 +180,10 @@ import Locations from "../components/Locations.astro";
           color: var(--dark-grey);
           margin-bottom: 16px;
         }
-      }
 
-      @media screen and (max-width: 768px) {
-        max-width: 75%;
+        @media screen and (max-width: 768px) {
+          max-width: 75%;
+        }
       }
     }
   }

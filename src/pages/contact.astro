@@ -47,6 +47,12 @@ import Locations from "../components/Locations.astro";
     background-repeat: no-repeat;
     background-position: 0% 100%;
 
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 60px;
+      padding: 72px 40px;
+    }
+
     .left-container {
       color: var(--white);
 
@@ -98,6 +104,7 @@ import Locations from "../components/Locations.astro";
           text-align: center;
           text-transform: uppercase;
           margin-left: auto;
+          margin-top: 24px;
           letter-spacing: 1px;
         }
       }
