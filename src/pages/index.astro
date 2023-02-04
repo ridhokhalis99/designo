@@ -70,7 +70,11 @@ const benefits = [
         benefits.map((benefit) => (
           <div class="benefit">
             <div class="image-background">
-              <img src={benefit.image} alt={benefit.title} />
+              <img
+                class="image-benefit"
+                src={benefit.image}
+                alt={benefit.title}
+              />
             </div>
             <h2>{benefit.title}</h2>
             <p>{benefit.description}</p>
@@ -108,7 +112,7 @@ const benefits = [
 
         p {
           max-width: 445px;
-          margin-bottom: 24px;
+          margin-bottom: 40px;
         }
 
         a {
@@ -122,17 +126,31 @@ const benefits = [
           text-transform: uppercase;
           letter-spacing: 1px;
           color: var(--dark-grey);
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background-color: var(--light-peach);
+            color: var(--white);
+          }
         }
       }
 
       .image {
         position: relative;
-        width: 100%;
-        height: 100%;
-        max-width: 540px;
         max-height: 640px;
         left: -50px;
         top: -20px;
+
+        img {
+          width: 130%;
+          object-fit: cover;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            transform: scale(1.1);
+            rotate: 7.5deg;
+          }
+        }
       }
     }
 
@@ -153,8 +171,14 @@ const benefits = [
         align-items: center;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
-        box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.5);
+        box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.6);
+        transition: all 0.3s ease-in-out;
+        background-size: 100%;
+
+        &:hover {
+          background-size: 110%;
+          box-shadow: inset 0 0 0 1000px hsla(0, 0%, 8%, 0.4);
+        }
 
         h2 {
           margin: 0;
@@ -199,7 +223,7 @@ const benefits = [
     #benefit {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      gap: 36px;
 
       .benefit {
         display: flex;
@@ -212,6 +236,20 @@ const benefits = [
           display: flex;
           justify-content: center;
           align-items: center;
+
+          .image-benefit {
+            transition: all 0.25s ease-in-out;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+
+          &:hover {
+            .image-benefit {
+              transform: scale(1.1);
+            }
+          }
         }
 
         h2 {

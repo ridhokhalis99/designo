@@ -114,7 +114,13 @@ const locations = [
       background-color: var(--black);
       background-repeat: no-repeat;
       background-position: center;
-      background-size: cover;
+      background-size: 125%;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        scale: 1.05;
+        background-size: 140%;
+      }
     }
 
     #map-canada {
